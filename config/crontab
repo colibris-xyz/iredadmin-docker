@@ -1,0 +1,8 @@
+# iRedAdmin: Clean up sql database.
+0   *   *   *   *   /usr/bin/python3 /var/www/app/tools/cleanup_db.py
+
+# iRedAdmin: Delete mailboxes on file system which belong to removed accounts.
+0   1   *   *   *   /usr/bin/python3 /var/www/app/tools/delete_mailboxes.py
+
+# iRedMail: Cleanup Amavisd database
+0   2   *   *   *   /usr/bin/python3 /var/www/app/tools/cleanup_amavisd_db.py
