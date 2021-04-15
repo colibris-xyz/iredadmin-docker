@@ -1,5 +1,12 @@
 {
   "extends": [
-    "config:base"
-  ]
+    "config:base",
+    "docker:enableMajor"
+  ],
+  "regexManagers": [{
+    "fileMatch": ["^Dockerfile$"],
+    "matchStrings": ["ARG IREDADMIN_VERSION=(?<currentValue>.*?)\n"],
+    "depNameTemplate": "iredmail/iRedAdmin",
+    "datasourceTemplate": "github-tags"
+  }]
 }
