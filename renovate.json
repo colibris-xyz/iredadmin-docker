@@ -6,7 +6,7 @@
   "regexManagers": [{
     "fileMatch": ["^Dockerfile$"],
     "matchStrings": ["ARG IREDADMIN_VERSION=(?<currentValue>.*?)\n"],
-    "versioning": "loose",
+    "versioningTemplate": "loose",
     "depNameTemplate": "iredmail/iRedAdmin",
     "datasourceTemplate": "github-releases"
   }]
