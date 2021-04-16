@@ -30,7 +30,7 @@ COPY config/settings.py /var/www/app/settings.py
 
 COPY --chown=nobody:nobody entrypoint.sh /
 
-EXPOSE 8080
+EXPOSE 80
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
