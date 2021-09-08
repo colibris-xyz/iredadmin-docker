@@ -8,6 +8,6 @@
     "matchStrings": ["ARG IREDADMIN_VERSION=(?<currentValue>.*?)\n"],
     "versioningTemplate": "loose",
     "depNameTemplate": "iredmail/iRedAdmin",
-    "datasourceTemplate": "github-releases"
+    "datasourceTemplate": "github-tags"
   }]
 }
