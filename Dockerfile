@@ -1,12 +1,11 @@
-FROM python:3.8.8-alpine3.12
+FROM python:3.8.12-alpine3.13
 
 ENV VMAIL_UID=2000
 ENV PYTHONPATH=/usr/local/lib/python3.8/site-packages:/usr/lib/python3.8/site-packages
 ENV UWSGI_PLUGIN=python3
 
 RUN apk add --no-cache nginx uwsgi-python3 supervisor postgresql-libs \
-  && apk add --no-cache --virtual .build-deps curl gcc musl-dev postgresql-dev libffi-dev openldap-dev \
-  && rm /etc/nginx/conf.d/default.conf
+  && apk add --no-cache --virtual .build-deps curl gcc musl-dev postgresql-dev libffi-dev openldap-dev
 
 RUN mkdir -p /var/www/app \
   && chown -R nobody.nobody /var/www/app \
