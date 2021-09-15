@@ -21,7 +21,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ghcr.io/colibris-xyz/iredadmin-docker
+          images: ghcr.io/colibris-xyz/iredadmin
           tags: |
             type=ref,event=pr
             type=edge
