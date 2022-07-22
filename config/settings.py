@@ -63,7 +63,6 @@ iredadmin_db_password = os.getenv('IREDADMIN_DB_PASSWORD')
 # releasing, etc.
 
 if os.getenv('AMAVISD_DB_HOST'):
-
     amavisd_enable_logging = True
     amavisd_enable_quarantine = True
 
@@ -72,7 +71,11 @@ if os.getenv('AMAVISD_DB_HOST'):
     amavisd_db_name = os.getenv('AMAVISD_DB_NAME', 'amavisd')
     amavisd_db_user = os.getenv('AMAVISD_DB_USER', 'amavisd')
     amavisd_db_password = os.getenv('AMAVISD_DB_PASSWORD')
-
+    
+else:
+    amavisd_enable_logging = False
+    amavisd_enable_quarantine = False 
+    
 ##############################################################################
 # Settings used for iRedAPD integration. Provides throttling and more.
 #
@@ -99,6 +102,7 @@ if backend == 'ldap':
     #   - bind pw is plain text, not encryped/hashed.
     ldap_bind_dn = os.getenv('LDAP_BIND_DN')
     ldap_bind_password = os.getenv('LDAP_BIND_PASSWORD')
+
 
 elif backend == 'mysql' or backend == 'pgsql':
 
