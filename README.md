@@ -8,7 +8,7 @@
 ## Basic usage
 
 ```console
-$ docker run -d -p 8080:80 --env-file .env -v /var/vmail/vmail1:/var/vmail/vmail1 ghcr.io/colibris-xyz/iredadmin-docker:latest
+$ docker run -d -p 8080:80 --env-file .env -v /var/vmail/vmail1:/var/vmail/vmail1 ghcr.io/colibris-xyz/iredadmin:latest
 ```
 
 All the basic configuration is done by environment variables, see the list below.
