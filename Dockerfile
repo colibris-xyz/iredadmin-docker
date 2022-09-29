@@ -1,11 +1,11 @@
-FROM python:3.8.12-alpine3.13
+FROM python:3.8.14-alpine3.15
 
 ENV VMAIL_UID=2000
 ENV PYTHONPATH=/usr/local/lib/python3.8/site-packages:/usr/lib/python3.8/site-packages
 ENV UWSGI_PLUGIN=python3
 
 RUN apk add --no-cache nginx uwsgi-python3 supervisor postgresql-libs \
-  && apk add --no-cache --virtual .build-deps curl gcc musl-dev postgresql-dev libffi-dev openldap-dev
+  && apk add --no-cache --virtual .build-deps cargo curl gcc linux-headers musl-dev postgresql-dev openldap-dev
 
 RUN mkdir -p /var/www/app \
   && chown -R nobody.nobody /var/www/app \
@@ -18,6 +18,7 @@ WORKDIR /var/www/app
 ARG IREDADMIN_VERSION=1.8
 
 RUN curl -L https://github.com/iredmail/iRedAdmin/archive/refs/tags/${IREDADMIN_VERSION}.tar.gz | tar -xz --strip-components=1 \
+  && pip install --upgrade pip \
   && pip install -r requirements.txt --no-cache-dir \
   && apk --purge del .build-deps
 
