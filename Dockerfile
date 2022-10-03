@@ -5,7 +5,7 @@ ENV PYTHONPATH=/usr/local/lib/python3.8/site-packages:/usr/lib/python3.8/site-pa
 ENV UWSGI_PLUGIN=python3
 
 RUN apk add --no-cache nginx uwsgi-python3 supervisor postgresql-libs \
-  && apk add --no-cache --virtual .build-deps curl gcc linux-headers musl-dev postgresql-dev openldap-dev
+  && apk add --no-cache --virtual .build-deps cargo curl gcc linux-headers musl-dev postgresql-dev openldap-dev
 
 RUN mkdir -p /var/www/app \
   && chown -R nobody.nobody /var/www/app \
