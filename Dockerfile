@@ -15,7 +15,7 @@ RUN mkdir -p /var/www/app \
 
 WORKDIR /var/www/app
 
-ARG IREDADMIN_VERSION=1.8
+ARG IREDADMIN_VERSION=1.9.0
 
 RUN curl -L https://github.com/iredmail/iRedAdmin/archive/refs/tags/${IREDADMIN_VERSION}.tar.gz | tar -xz --strip-components=1 \
   && pip install --upgrade pip \
