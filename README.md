@@ -1,5 +1,6 @@
-[![GitHub release](https://img.shields.io/github/v/release/colibris-xyz/iredadmin-docker.svg?style=flat)](https://github.com/colibris-xyz/iredadmin-docker/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/colibris-xyz/iredadmin-docker)](https://github.com/colibris-xyz/iredadmin-docker/blob/main/LICENSE)
+[![Releases](https://img.shields.io/gitlab/v/release/colibris-xyz/iredadmin-docker?gitlab_url=https%3A%2F%2Fframagit.org)](https://framagit.org/colibris-xyz/iredadmin-docker/-/releases)
+[![Build status](https://img.shields.io/gitlab/pipeline-status/colibris-xyz/iredadmin-docker?branch=main&gitlab_url=https%3A%2F%2Fframagit.org)](https://framagit.org/colibris-xyz/iredadmin-docker/-/pipelines)
+[![License](https://img.shields.io/gitlab/license/colibris-xyz/iredadmin-docker?gitlab_url=https%3A%2F%2Fframagit.org)](https://framagit.org/colibris-xyz/iredadmin-docker/-/blob/main/LICENSE)
 
 # All-in-one (nginx + uwsgi + cron) Docker image for iRedAdmin
 
