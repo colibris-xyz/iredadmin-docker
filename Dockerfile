@@ -1,4 +1,4 @@
-FROM python:3.11.3-alpine3.17
+FROM python:3.11.5-alpine3.17
 
 ENV VMAIL_UID=2000
 ENV PYTHONPATH=/usr/local/lib/python3.11/site-packages:/usr/lib/python3.11/site-packages
