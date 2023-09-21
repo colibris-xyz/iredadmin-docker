@@ -14,7 +14,7 @@ RUN mkdir -p /var/www/app \
 
 WORKDIR /var/www/app
 
-ARG IREDADMIN_VERSION=2.3
+ARG IREDADMIN_VERSION=2.5
 
 RUN apk add --no-cache --virtual .build-deps cargo curl gcc linux-headers musl-dev postgresql-dev \
   && curl -L https://github.com/iredmail/iRedAdmin/archive/refs/tags/${IREDADMIN_VERSION}.tar.gz | tar -xz --strip-components=1 \
