@@ -1,4 +1,4 @@
-FROM python:3.11.3-alpine3.17
+FROM python:3.11.15-alpine3.24
 
 ENV VMAIL_UID=2000
 ENV PYTHONPATH=/usr/local/lib/python3.11/site-packages:/usr/lib/python3.11/site-packages
@@ -7,17 +7,18 @@ ENV UWSGI_PLUGIN=python3
 RUN apk add --no-cache nginx uwsgi-python3 supervisor postgresql-libs openldap-dev
 
 RUN mkdir -p /var/www/app \
-  && chown -R nobody.nobody /var/www/app \
-  && chown -R nobody.nobody /run \
-  && chown -R nobody.nobody /var/lib/nginx \
-  && chown -R nobody.nobody /var/log/nginx
+  && chown -R nobody:nobody /var/www/app \
+  && chown -R nobody:nobody /run \
+  && chown -R nobody:nobody /var/lib/nginx \
+  && chown -R nobody:nobody /var/log/nginx
 
 WORKDIR /var/www/app
 
-ARG IREDADMIN_VERSION=2.3
+ARG IREDADMIN_VERSION=2.8.1
 
 RUN apk add --no-cache --virtual .build-deps cargo curl gcc linux-headers musl-dev postgresql-dev \
   && curl -L https://github.com/iredmail/iRedAdmin/archive/refs/tags/${IREDADMIN_VERSION}.tar.gz | tar -xz --strip-components=1 \
+  && sed -i 's/^netifaces$/netifaces2/' requirements.txt \
   && pip install -r requirements.txt --no-cache-dir \
   && cp /usr/local/lib/python3.11/site-packages/_ldap.*.so /usr/local/lib/python3.11/site-packages/_ldap.so \
   && apk --purge del .build-deps
